@@ -1,12 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
+import productRoute from "./routes/productRoute.js";
 
 dotenv.config();
 
 const app = express();
 
-app.get("/products", (req, res) => {});
+app.use(express.json()); //allows us to accept JSON data in the req.body
+
+app.use("/api/products", productRoute)
 
 app.listen(5000, () => {
     connectDB();

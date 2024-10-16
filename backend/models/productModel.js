@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema( {
     timestamps: true // createdAt, updatedAt
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model("Product", productSchema);
 // why "Product", not "products"?
 // because mongoose will convert the naming into a plural form, and lower-capitalised the first letter
 
